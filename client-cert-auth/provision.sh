@@ -25,6 +25,9 @@ chmod 600 /etc/pki/self-signed/*.pem
 # start apache http server
 systemctl start httpd # use port 80, 443
 
+# plug wsgi
+./plug-wsgi.sh
+
 ###
 
 # install nginx http server
