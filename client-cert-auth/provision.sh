@@ -20,6 +20,7 @@ cp /vagrant/data/httpd/ssl.conf /etc/httpd/conf.d/ssl.conf
 cp /vagrant/data/pki/server.key.pem /etc/pki/self-signed/server.key.pem
 cp /vagrant/data/pki/server.cert.pem /etc/pki/self-signed/server.cert.pem
 cp /vagrant/data/pki/ca.cert.pem /etc/pki/self-signed/ca.cert.pem
+chmod 600 /etc/pki/self-signed/*.pem
 
 # start apache http server
 systemctl start httpd # use port 80, 443
