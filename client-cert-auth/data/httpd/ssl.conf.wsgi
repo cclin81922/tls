@@ -213,6 +213,6 @@ BrowserMatch "MSIE [2-5]" \
 CustomLog logs/ssl_request_log \
           "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
 
-WSGIScriptAlias /wsgi /var/www/html/wsgi.py
+WSGIScriptAlias /wsgi /var/www/cgi-bin/wsgi.py
 </VirtualHost>                                  
 

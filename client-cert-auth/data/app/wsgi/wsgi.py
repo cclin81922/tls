@@ -7,6 +7,7 @@ def application(environ,start_response):
            '</div>\n' \
            '</body>\n' \
            '</html>\n'
+    html = 'CN: %s\n' % environ['SSL_CLIENT_S_DN_CN']
     response_header = [('Content-type','text/html')]
     start_response(status,response_header)
     return [html]
