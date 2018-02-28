@@ -19,4 +19,5 @@ curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhos
 curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost/wsgi
 curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost/flask/
 curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost/flask/counter
+curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost/django/
 ```

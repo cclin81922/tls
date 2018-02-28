@@ -37,6 +37,9 @@ systemctl start httpd # use port 80, 443
 # add sqlite
 ./add-sqlite.sh
 
+# add django
+./add-django.sh
+
 ###
 
 # install nginx http server
