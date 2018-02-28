@@ -40,6 +40,9 @@ systemctl start httpd # use port 80, 443
 # add django
 ./add-django.sh
 
+# add pecan
+./add-pecan.sh
+
 ###
 
 # install nginx http server
