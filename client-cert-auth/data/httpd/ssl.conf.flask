@@ -177,10 +177,6 @@ SSLVerifyDepth  10
 </Files>
 <Directory "/var/www/cgi-bin">
     SSLOptions +StdEnvVars
-
-    WSGIProcessGroup flaskhello
-    WSGIApplicationGroup %{GLOBAL}
-    Require all granted
 </Directory>
 
 #   SSL Protocol Adjustments:
@@ -218,8 +214,6 @@ CustomLog logs/ssl_request_log \
           "%t %h %{SSL_PROTOCOL}x %{SSL_CIPHER}x \"%r\" %b"
 
 WSGIScriptAlias /wsgi /var/www/cgi-bin/wsgi.py
-
 WSGIScriptAlias /flask /var/www/cgi-bin/flask.py
-WSGIDaemonProcess flaskhello threads=5
 </VirtualHost>                                  
 
