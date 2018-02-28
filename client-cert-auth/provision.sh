@@ -31,6 +31,9 @@ systemctl start httpd # use port 80, 443
 # add flask
 ./add-flask.sh
 
+# add sqlite
+./add-sqlite.sh
+
 ###
 
 # install nginx http server
