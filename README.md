@@ -17,4 +17,5 @@ cd /vagrant/data/pki
 curl --cert ./client.cert.pem --key ./client.key.pem --cacert ca.cert.pem https://localhost
 curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost
 curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost/wsgi
+curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost/flask/
 ```

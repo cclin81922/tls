@@ -28,6 +28,9 @@ systemctl start httpd # use port 80, 443
 # plug wsgi
 ./plug-wsgi.sh
 
+# add flask
+./add-flask.sh
+
 ###
 
 # install nginx http server
