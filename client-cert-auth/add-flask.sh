@@ -6,7 +6,7 @@ set -o pipefail
 ###
 
 # install flask
-yum install python2-pip-8.1.2-5.el7
+yum -y install python2-pip-8.1.2-5.el7
 pip install flask==0.12.2
 
 # copy configuration files and wsgi app from data dir
