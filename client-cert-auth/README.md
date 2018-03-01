@@ -24,3 +24,25 @@ curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhos
 curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost.localdomain/django/
 curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost.localdomain/pecan/
 ```
+
+---
+
+How to manually change domain from localhost.localdomain to 127.0.0.1.xip.io
+
+Step 1. Modify file /etc/httpd/conf.d/ssl.conf
+
+```
+ServerName 127.0.0.1.xip.io:443
+```
+
+Step 2. Re-issue cert file /etc/pki/self-signed/server.cert.pem
+
+```
+CN=127.0.0.1.xip.io
+```
+
+Step 3. Restart apache http server
+
+```
+systemctl restart httpd
+```
