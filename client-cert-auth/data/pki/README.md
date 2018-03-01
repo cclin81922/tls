@@ -13,7 +13,7 @@ openssl req -new -sha256 -x509 -nodes -days 3600 -key ca.key.pem -out ca.cert.pe
 server.key.pem, server.csr
 
 ```
-openssl req -new -sha256 -keyout server.key.pem -out server.csr -days 365 -newkey rsa:2048 -nodes -subj "/C=TW/ST=Taiwan/L=Taipei/O=cclin/OU=cclin/CN=localhost/emailAddress=cclin81922@gmail.com"
+openssl req -new -sha256 -keyout server.key.pem -out server.csr -days 365 -newkey rsa:2048 -nodes -subj "/C=TW/ST=Taiwan/L=Taipei/O=cclin/OU=cclin/CN=localhost.localdomain/emailAddress=cclin81922@gmail.com"
 ```
 
 server.cert.pem, ca.srl
