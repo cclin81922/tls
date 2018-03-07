@@ -2,7 +2,7 @@
 
 a.k.a. two-way ssl authentication
 
-Usage
+Usage 1
 
 ```
 # @ vagrant host
@@ -23,6 +23,17 @@ curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhos
 curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost.localdomain/flask/counter
 curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost.localdomain/django/
 curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost.localdomain/pecan/
+```
+
+Usage 2
+
+```
+bash build-docker-image.sh
+bash run-docker-container.sh
+
+cd /vagrant/data/pki
+curl --cert ./client.cert.pem --key ./client.key.pem --cacert ca.cert.pem https://localhost.localdomain
+curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost.localdomain
 ```
 
 ---
