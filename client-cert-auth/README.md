@@ -32,8 +32,8 @@ bash build-docker-image.sh
 bash run-docker-container.sh
 
 cd /vagrant/data/pki
-curl --cert ./client.cert.pem --key ./client.key.pem --cacert ca.cert.pem https://localhost.localdomain
-curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost.localdomain
+curl --cert ./client.cert.pem --key ./client.key.pem --cacert ca.cert.pem https://localhost.localdomain:8443
+curl --cert ./client.cert.pem --key ./client.key.pem --insecure https://localhost.localdomain:8443
 ```
 
 ---
