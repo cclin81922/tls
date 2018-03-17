@@ -15,3 +15,7 @@ $GOPATH/bin/client data/pki/client.key.pem data/pki/client.cert.pem data/pki/ca.
 Forked from https://github.com/hydrogen18/test-tls
 
 Origin author's blog http://www.hydrogen18.com/blog/your-own-pki-tls-golang.html
+
+# Related resources
+
+* http version http://www.bite-code.com/2015/06/25/tls-mutual-auth-in-golang/
