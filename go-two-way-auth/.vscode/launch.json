@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch http server",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${fileDirname}"
+        },
+        {
+            "name": "Launch http client",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${fileDirname}"
+        },
+        {
             "name": "Launch server",
             "type": "go",
             "request": "launch",

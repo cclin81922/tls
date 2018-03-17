@@ -11,6 +11,7 @@ import (
 
 func HelloServer(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, "hello, world!\n")
+	io.WriteString(w, req.TLS.PeerCertificates[0].Subject.CommonName)
 }
 
 func main() {
