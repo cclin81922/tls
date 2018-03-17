@@ -33,3 +33,9 @@ Origin author's blog http://www.hydrogen18.com/blog/your-own-pki-tls-golang.html
 HTTP version server is forked from https://gist.githubusercontent.com/chriswhitcombe/2e0450294f370f493aec/raw/6e0abd16bfd53cf854fe50a4ccad86b26e5fe7dc/gistfile1.go
 
 Origin author's blog http://www.bite-code.com/2015/06/25/tls-mutual-auth-in-golang/
+
+# Related resources
+
+* gRPC version https://bbengfort.github.io/programmer/2017/03/03/secure-grpc.html
+* gRPC version http://krishicks.com/post/2016/11/01/using-grpc-with-mutual-tls-in-golang/
+* gRPC version https://github.com/enricofoltran/hello-auth-grpc
