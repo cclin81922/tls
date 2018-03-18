@@ -22,6 +22,18 @@ cd $GOPATH/src/github.com/cclin81922/tls/go-two-way-auth/client/http
 go run main.go
 ```
 
+# Usage 3
+
+```
+go get github.com/cclin81922/tls/go-two-way-auth
+
+cd $GOPATH/src/github.com/cclin81922/tls/go-two-way-auth/server/grpc
+go run main.go
+
+cd $GOPATH/src/github.com/cclin81922/tls/go-two-way-auth/client/grpc
+go run main.go
+```
+
 # Acknowledge 1
 
 TCP version server is forked from https://github.com/hydrogen18/test-tls
