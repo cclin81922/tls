@@ -21,11 +21,15 @@
 package main
 
 import (
+	"crypto/tls"
+	"crypto/x509"
+	"io/ioutil"
 	"log"
 	"net"
 
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
 	pb "google.golang.org/grpc/examples/helloworld/helloworld"
 	"google.golang.org/grpc/reflection"
 )
@@ -43,11 +47,36 @@ func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloRe
 }
 
 func main() {
+	// TLS
+	certificate, err := tls.LoadX509KeyPair(
+		"../../data/pki/server.cert.pem",
+		"../../data/pki/server.key.pem",
+	)
+	certPool := x509.NewCertPool()
+	bs, err := ioutil.ReadFile("../../data/pki/ca.cert.pem")
+	if err != nil {
+		log.Fatalf("failed to read client ca cert: %s", err)
+	}
+	ok := certPool.AppendCertsFromPEM(bs)
+	if !ok {
+		log.Fatal("failed to append client certs")
+	}
+	tlsConfig := &tls.Config{
+		ClientAuth:   tls.RequireAndVerifyClientCert,
+		Certificates: []tls.Certificate{certificate},
+		ClientCAs:    certPool,
+	}
+	serverOption := grpc.Creds(credentials.NewTLS(tlsConfig))
+	// End of TLS
+
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
-	s := grpc.NewServer()
+
+	//s := grpc.NewServer()
+	s := grpc.NewServer(serverOption) // TLS version
+
 	pb.RegisterGreeterServer(s, &server{})
 	// Register reflection service on gRPC server.
 	reflection.Register(s)

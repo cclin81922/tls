@@ -19,23 +19,51 @@
 package main
 
 import (
+	"crypto/tls"
+	"crypto/x509"
+	"io/ioutil"
 	"log"
 	"os"
 	"time"
 
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
 	pb "google.golang.org/grpc/examples/helloworld/helloworld"
 )
 
 const (
-	address     = "localhost:50051"
+	address     = "localhost.localdomain:50051"
 	defaultName = "world"
 )
 
 func main() {
+	// TLS
+	certificate, err := tls.LoadX509KeyPair(
+		"../../data/pki/client.cert.pem",
+		"../../data/pki/client.key.pem",
+	)
+	certPool := x509.NewCertPool()
+	bs, err := ioutil.ReadFile("../../data/pki/ca.cert.pem")
+	if err != nil {
+		log.Fatalf("failed to read ca cert: %s", err)
+	}
+	ok := certPool.AppendCertsFromPEM(bs)
+	if !ok {
+		log.Fatal("failed to append certs")
+	}
+	transportCreds := credentials.NewTLS(&tls.Config{
+		ServerName:   "localhost.localdomain",
+		Certificates: []tls.Certificate{certificate},
+		RootCAs:      certPool,
+	})
+	dialOption := grpc.WithTransportCredentials(transportCreds)
+	// End of TLS
+
 	// Set up a connection to the server.
-	conn, err := grpc.Dial(address, grpc.WithInsecure())
+	//conn, err := grpc.Dial(address, grpc.WithInsecure())
+	conn, err := grpc.Dial(address, dialOption) // TLS version
+
 	if err != nil {
 		log.Fatalf("did not connect: %v", err)
 	}
