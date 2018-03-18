@@ -46,8 +46,13 @@ HTTP version server is forked from https://gist.githubusercontent.com/chriswhitc
 
 Origin author's blog http://www.bite-code.com/2015/06/25/tls-mutual-auth-in-golang/
 
+# Acknowledge 3
+
+gRPC version is forked from http://krishicks.com/post/2016/11/01/using-grpc-with-mutual-tls-in-golang/
+
+Origin author's blog http://krishicks.com/post/2016/11/01/using-grpc-with-mutual-tls-in-golang/
+
 # Related resources
 
 * gRPC version https://bbengfort.github.io/programmer/2017/03/03/secure-grpc.html
-* gRPC version http://krishicks.com/post/2016/11/01/using-grpc-with-mutual-tls-in-golang/
 * gRPC version https://github.com/enricofoltran/hello-auth-grpc
