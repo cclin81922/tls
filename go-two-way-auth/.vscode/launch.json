@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch grpc server",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${fileDirname}"
+        },
+        {
+            "name": "Launch grpc client",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${fileDirname}"
+        },
+        {
             "name": "Launch http server",
             "type": "go",
             "request": "launch",
