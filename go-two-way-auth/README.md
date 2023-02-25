@@ -22,9 +22,11 @@ cd $GOPATH/src/github.com/cclin81922/tls/go-two-way-auth/client/http
 go run main.go
 ```
 
-How to fix this error **Get "https://localhost.localdomain:8080/hello": x509: certificate relies on legacy Common Name field, use SANs or temporarily enable Common Name matching with GODEBUG=x509ignoreCN=0**
+## FAQ
 
-In http client side, run `export GODEBUG=x509ignoreCN=0` before sending http request.
+Q: How to fix this error **Get "https://localhost.localdomain:8080/hello": x509: certificate relies on legacy Common Name field, use SANs or temporarily enable Common Name matching with GODEBUG=x509ignoreCN=0** ?
+
+A: In http client side, run `export GODEBUG=x509ignoreCN=0` before sending http request. Why? see golang 1.15 release note https://go.dev/doc/go1.15#commonname
 
 # Usage 3
 
