@@ -28,7 +28,9 @@ Q: How to fix this error **Get "https://localhost.localdomain:8080/hello": x509:
 
 A: In http client side, run `export GODEBUG=x509ignoreCN=0` before sending http request. Why? see golang 1.15 release note https://go.dev/doc/go1.15#commonname
 
-Also see [How to create a self-signed SSL Certificate with SubjectAltName(SAN)](https://gist.github.com/KeithYeh/bb07cadd23645a6a62509b1ec8986bbc)
+Also see How to create a self-signed SSL Certificate with SubjectAltName(SAN):
+* https://gist.github.com/KeithYeh/bb07cadd23645a6a62509b1ec8986bbc
+* https://raymii.org/s/tutorials/OpenSSL_generate_self_signed_cert_with_Subject_Alternative_name_oneliner.html
 
 # Usage 3
 
